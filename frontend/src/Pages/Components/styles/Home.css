@@ -1,0 +1,134 @@
+/* Banner container */
+.hero-banner {
+  background: linear-gradient(to right, #000000c7, #000000b3), no-repeat center center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.35)), url("../images/bgphoto.png");
+  background-size: cover;
+  height: 90vh;
+  color: white;
+  display: flex;
+  align-items: flex-start; /* Align content higher */
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px; /* Higher up the screen */
+  position: relative;
+}
+
+/* Container inside banner */
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 30px; /* Fine-tune vertical shift */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headline */
+.hero-banner h1,
+.animated-brand {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Description text */
+.hero-banner p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  color: #ffdada;
+}
+
+/* CTA button */
+.hero-banner .btn {
+  font-weight: 500;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Bouncy hover effect */
+.hero-banner .btn:hover {
+  animation: bounce 0.5s;
+  filter: drop-shadow(3px 3px 3px rgba(236, 9, 9, 0.6));
+  background-color: #e63939;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-banner h1,
+  .animated-brand {
+    font-size: 2.2rem;
+  }
+
+  .hero-banner p {
+    font-size: 1rem;
+  }
+}
+
+/* popIn animation */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.15);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Soft pulsing animation */
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 75, 43, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 75, 43, 0.6);
+    transform: scale(1.10);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 75, 43, 0.3);
+    transform: scale(1);
+  }
+}
+
+/* Brand title styling */
+.animated-brand {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 10px rgba(255, 75, 43, 0.5);
+  letter-spacing: 2px;
+  animation: popIn 1s ease-in-out forwards, pulseGlow 2.5s ease-in-out 1.2s infinite;
+}
